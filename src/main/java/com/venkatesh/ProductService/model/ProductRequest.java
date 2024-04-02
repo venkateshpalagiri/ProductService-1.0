@@ -1,6 +1,6 @@
 package com.venkatesh.ProductService.model;
 
-import jakarta.persistence.Column;
+
 import lombok.Data;
 
 @Data
