@@ -1,6 +1,7 @@
 package com.venkatesh.ProductService.service;
 
 import com.venkatesh.ProductService.entity.Product;
+import com.venkatesh.ProductService.exception.ProductServiceCustomException;
 import com.venkatesh.ProductService.model.ProductRequest;
 import com.venkatesh.ProductService.model.ProductResponse;
 import com.venkatesh.ProductService.repository.ProductRepository;
@@ -35,7 +36,7 @@ public class ProductServiceImpl implements ProductService{
     public ProductResponse getProductById(Long productId){
         log.info("Getting product...");
         Product product=productRepository.findById(productId)
-                .orElseThrow(()->new RuntimeException("Product with given id not found."));
+                .orElseThrow(()->new ProductServiceCustomException("Product with given id not found","PRODUCT_NOT_FOUND"));
         ProductResponse productResponse=new ProductResponse();
 //        BeanUtils.copyProperties(product,productResponse);
         copyProperties(product,productResponse);
