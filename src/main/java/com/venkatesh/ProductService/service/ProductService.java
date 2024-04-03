@@ -6,4 +6,6 @@ import com.venkatesh.ProductService.model.ProductResponse;
 public interface ProductService {
     String addProduct(ProductRequest productRequest);
     ProductResponse getProductById(Long productId);
+    void reduceQuantity(long productId,long quantity);
+    ProductResponse updateProduct(long productId,ProductResponse productResponse);
 }

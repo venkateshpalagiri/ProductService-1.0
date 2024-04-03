@@ -25,4 +25,16 @@ public class ProductController {
         return new ResponseEntity<>(productResponse,HttpStatus.OK);
 
     }
+    @PutMapping("updateProduct/{id}")
+    public ResponseEntity<ProductResponse> updateProduct(@PathVariable("id") long prouductId,
+                                                         @RequestBody ProductResponse productResponse){
+       ProductResponse updatedProduct= productService.updateProduct(prouductId,productResponse);
+        return new ResponseEntity<>(updatedProduct,HttpStatus.OK);
+    }
+
+    @PutMapping("/reduceQuantity/{id}")
+    public ResponseEntity<Void> reduceQuantity(@PathVariable("id") long productId,@RequestParam long quantity){
+        productService.reduceQuantity(productId,quantity);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
