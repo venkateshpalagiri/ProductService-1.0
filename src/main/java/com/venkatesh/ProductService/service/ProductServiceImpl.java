@@ -6,18 +6,13 @@ import com.venkatesh.ProductService.model.ProductRequest;
 import com.venkatesh.ProductService.model.ProductResponse;
 import com.venkatesh.ProductService.repository.ProductRepository;
 import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.Slf4j;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Null;
 import java.util.Objects;
 
-import static org.springframework.beans.BeanUtils.*;
+import static org.springframework.beans.BeanUtils.copyProperties;
 
 @Service
 @Log4j2
